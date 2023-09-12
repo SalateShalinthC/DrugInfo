@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="934,702" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p6="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugad="clr-namespace:UiPath.GSuite.Activities.Drive;assembly=UiPath.GSuite.Activities" xmlns:ugade="clr-namespace:UiPath.GSuite.Activities.Drive.Enums;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabf="clr-namespace:UiPath.Mail.Activities.Business.ForEachMail;assembly=UiPath.Mail.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="934,702" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p6="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd3="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable1" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugade="clr-namespace:UiPath.GSuite.Activities.Drive.Enums;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabf="clr-namespace:UiPath.Mail.Activities.Business.ForEachMail;assembly=UiPath.Mail.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -81,6 +81,7 @@
       <x:String>UiPath.GSuite.Activities.Drive</x:String>
       <x:String>UiPath.GSuite.Contracts</x:String>
       <x:String>UiPath.GSuite.Activities.Sheets.Enums</x:String>
+      <x:String>UiPath.GSuite.Sheets.Enums</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -174,33 +175,35 @@
       <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
       <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
       <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable1</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap:VirtualizedContainerService.HintSize="634,637" sap2010:WorkflowViewState.IdRef="Flowchart_2">
     <Flowchart.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="attachments" />
+      <Variable x:TypeArguments="sd2:DataTable" Name="DtOut" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">340,0</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">340,37.5 310,37.5 310,150 210,150</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">370,75 370,105 320,105 320,288.5</av:PointCollection>
         <x:Double x:Key="Width">600</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID3</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID3">
+    <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">10,109.5</av:Point>
           <av:Size x:Key="ShapeSize">200,81</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">110,190.5 110,237.04 347,237.04 347,180 360,180</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">110,190.5 110,220 330,220 330,190 360,190</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Get from mail, uploaded it to drive" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence DisplayName="Get pdf from mail" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="output" />
         </Sequence.Variables>
@@ -222,7 +225,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <umab:ForEachEmailX DisplayName="Getting the required mail and it' attatchment" sap:VirtualizedContainerService.HintSize="530,720" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" Mails="[Outlook.Folder(&quot;Inbox&quot;)]" NumberOfEmailsLimit="100" UnreadOnly="True" WithAttachmentsOnly="True">
+                <umab:ForEachEmailX DisplayName="Getting the required mail and it's attatchment" sap:VirtualizedContainerService.HintSize="530,720" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" Mails="[Outlook.Folder(&quot;Inbox&quot;)]" NumberOfEmailsLimit="100" UnreadOnly="True" WithAttachmentsOnly="True">
                   <umab:ForEachEmailX.Body>
                     <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
                       <ActivityAction.Argument1>
@@ -257,46 +260,16 @@
             </ActivityAction>
           </umab:OutlookApplicationCard.Body>
         </umab:OutlookApplicationCard>
-        <ugad:GoogleDriveApplicationScope ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Timeout="{x:Null}" Account="salateshalinth.23ec@licet.ac.in" DisplayName="Use Google Drive" sap:VirtualizedContainerService.HintSize="626,493" sap2010:WorkflowViewState.IdRef="GoogleDriveApplicationScope_1" UseConnectionService="False" UserEmail="salateshalinth.23ec@licet.ac.in">
-          <ugad:GoogleDriveApplicationScope.Body>
-            <ActivityAction x:TypeArguments="ugad:IGoogleDriveTarget">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="ugad:IGoogleDriveTarget" Name="GoogleDrive" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,351" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:String" Name="file_id" />
-                </Sequence.Variables>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <uga:UploadFile ContinueOnError="{x:Null}" AuthScopesInvalid="False" Convert="True" DisplayName="Uploading the excel file having prod changes to drive" DriveTarget="[GoogleDrive]" sap:VirtualizedContainerService.HintSize="388,240" sap2010:WorkflowViewState.IdRef="UploadFile_1" LocalFilePath="[attachments(0)]" ParentFolderName="Sample_uipath" ParentId="https://drive.google.com/drive/folders/1Fqn_gDE7u4aZKsWiDDqhmREJNGHjQYaE" ParentIdSelectionMode="Browse" Result="[file_id]" SupportsTeamDrives="False" UpdateExisting="True" />
-              </Sequence>
-            </ActivityAction>
-          </ugad:GoogleDriveApplicationScope.Body>
-          <ugad:GoogleDriveApplicationScope.CredentialID>
-            <InArgument x:TypeArguments="x:String">
-              <Literal x:TypeArguments="x:String" Value="" />
-            </InArgument>
-          </ugad:GoogleDriveApplicationScope.CredentialID>
-          <ugad:GoogleDriveApplicationScope.CredentialSecret>
-            <InArgument x:TypeArguments="x:String">
-              <Literal x:TypeArguments="x:String" Value="" />
-            </InArgument>
-          </ugad:GoogleDriveApplicationScope.CredentialSecret>
-        </ugad:GoogleDriveApplicationScope>
       </Sequence>
       <FlowStep.Next>
         <FlowStep x:Name="__ReferenceID2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">360,139.5</av:Point>
+              <av:Point x:Key="ShapeLocation">360,149.5</av:Point>
               <av:Size x:Key="ShapeSize">200,81</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Retrieving data from pdf" sap:VirtualizedContainerService.HintSize="572,2607" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Retrieving data from pdf" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="output" />
               <Variable x:TypeArguments="p6:DocumentTaxonomy" Name="taxanomy" />
@@ -307,7 +280,6 @@
               <Variable x:TypeArguments="x:String" Default="TerryDrugcompany.Medical.TDC_Drug_PriceChangelist" Name="Doc_type_ID" />
               <Variable x:TypeArguments="p3:ExtractionResult" Name="Extraction_Result" />
               <Variable x:TypeArguments="sd2:DataSet" Name="Extracted_DataSet" />
-              <Variable x:TypeArguments="sd2:DataTable" Name="DtOut" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -439,5 +411,51 @@
       </FlowStep.Next>
     </FlowStep>
     <x:Reference>__ReferenceID2</x:Reference>
+    <FlowStep x:Name="__ReferenceID3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">220,288.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,81</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence sap:VirtualizedContainerService.HintSize="450,816" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd3:DataTable1" Name="Existing_Data" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <uga:ReadRangeConnections x:TypeArguments="sd3:DataTable1" ConnectionAccountName="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" BrowserItemFriendlyName="Drug_Price change list" BrowserItemId="https://docs.google.com/spreadsheets/d/1AoSNI0s02-zwAkmnp4r3a3dVWddQW2g30qILQmnyleY/edit?usp=drivesdk" ConnectionId="ce51734c-1990-4227-b792-cbf7349ca150" DisplayName="Read Range" HasHeaders="True" sap:VirtualizedContainerService.HintSize="388,307" sap2010:WorkflowViewState.IdRef="ReadRangeConnections`1_2" ItemSelectionMode="Browse" Range="Sheet1" ReadAs="Values" Result="[Existing_Data]" UseConnectionService="True" WorkingWithTemplateSpreadsheet="False">
+          <uga:ReadRangeConnections.ColumnNames>
+            <x:Array Type="x:String">
+              <x:String>Product Id</x:String>
+              <x:String>Drugs name</x:String>
+              <x:String>Status</x:String>
+              <x:String>MOQ</x:String>
+              <x:String>Current Price</x:String>
+              <x:String>Revised Price</x:String>
+            </x:Array>
+          </uga:ReadRangeConnections.ColumnNames>
+          <uga:ReadRangeConnections.FileIdBackup>
+            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="Browse">
+              <usau:BackupSlot.BackupValues>
+                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </uga:ReadRangeConnections.FileIdBackup>
+        </uga:ReadRangeConnections>
+        <uga:WriteRangeConnections ConnectionAccountName="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" BrowserItemFriendlyName="sample_saves" BrowserItemId="https://docs.google.com/spreadsheets/d/1l1O6-ZXqB2kCLW3X2G2YusQknQzxkqxjowTQi2qjCbI/edit?usp=drivesdk" ConnectionId="ce51734c-1990-4227-b792-cbf7349ca150" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="388,358" sap2010:WorkflowViewState.IdRef="WriteRangeConnections_2" IncludeHeaders="True" ItemSelectionMode="Browse" Range="Sheet2" Source="[Existing_Data]" UseConnectionService="True" WorkingWithTemplateSpreadsheet="False" WriteMode="Overwrite">
+          <uga:WriteRangeConnections.FileIdBackup>
+            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="Browse">
+              <usau:BackupSlot.BackupValues>
+                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </uga:WriteRangeConnections.FileIdBackup>
+        </uga:WriteRangeConnections>
+      </Sequence>
+    </FlowStep>
   </Flowchart>
 </Activity>
