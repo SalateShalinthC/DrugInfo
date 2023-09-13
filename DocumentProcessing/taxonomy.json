@@ -31,7 +31,16 @@
               "Metadata": [],
               "RuleSet": {
                 "Criticality": "Should",
-                "Rules": []
+                "Rules": [
+                  {
+                    "Name": "empty",
+                    "Type": "Mandatory",
+                    "LogicalOperator": "OR",
+                    "ComparisonOperator": "Equals",
+                    "Expression": "",
+                    "SetValues": []
+                  }
+                ]
               },
               "DefaultValue": "",
               "DataSource": null
@@ -47,7 +56,16 @@
               "Metadata": [],
               "RuleSet": {
                 "Criticality": "Should",
-                "Rules": []
+                "Rules": [
+                  {
+                    "Name": "empty",
+                    "Type": "Mandatory",
+                    "LogicalOperator": "OR",
+                    "ComparisonOperator": "Equals",
+                    "Expression": "",
+                    "SetValues": []
+                  }
+                ]
               },
               "DefaultValue": "",
               "DataSource": null
@@ -63,7 +81,16 @@
               "Metadata": [],
               "RuleSet": {
                 "Criticality": "Should",
-                "Rules": []
+                "Rules": [
+                  {
+                    "Name": "empty",
+                    "Type": "Mandatory",
+                    "LogicalOperator": "OR",
+                    "ComparisonOperator": "Equals",
+                    "Expression": "",
+                    "SetValues": []
+                  }
+                ]
               },
               "DefaultValue": "",
               "DataSource": null
@@ -79,7 +106,16 @@
               "Metadata": [],
               "RuleSet": {
                 "Criticality": "Should",
-                "Rules": []
+                "Rules": [
+                  {
+                    "Name": "empty",
+                    "Type": "Mandatory",
+                    "LogicalOperator": "OR",
+                    "ComparisonOperator": "Equals",
+                    "Expression": "",
+                    "SetValues": []
+                  }
+                ]
               },
               "DefaultValue": "",
               "DataSource": null
@@ -95,7 +131,16 @@
               "Metadata": [],
               "RuleSet": {
                 "Criticality": "Should",
-                "Rules": []
+                "Rules": [
+                  {
+                    "Name": "empty",
+                    "Type": "Mandatory",
+                    "LogicalOperator": "OR",
+                    "ComparisonOperator": "Equals",
+                    "Expression": "",
+                    "SetValues": []
+                  }
+                ]
               },
               "DefaultValue": "",
               "DataSource": null
@@ -117,6 +162,19 @@
           "DataSource": null
         }
       ]
+    },
+    {
+      "Connections": [],
+      "DocumentTypeId": "Invoice_California_hotel.hotel_invoice.Name",
+      "Group": "Invoice_California_hotel",
+      "Category": "hotel_invoice",
+      "Name": "invoice",
+      "OptionalUniqueIdentifier": "",
+      "TypeField": {
+        "FieldId": "Invoice_California_hotel.hotel_invoice.Name.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": []
     }
   ],
   "Groups": [
@@ -124,6 +182,12 @@
       "Name": "Terry Drug company",
       "Categories": [
         "Medical"
+      ]
+    },
+    {
+      "Name": "Invoice_California_hotel",
+      "Categories": [
+        "hotel_invoice"
       ]
     }
   ],
