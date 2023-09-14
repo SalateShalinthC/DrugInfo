@@ -1,5 +1,5 @@
 {
-  "name": "Drug_Updates",
+  "name": "Data_Sync_Automation",
   "projectId": "9d6e6dc2-227b-4f3c-bd4c-c8f8edb1f063",
   "description": "Set known data in DB- Get latest data from mail - update if there is any changes in DB",
   "main": "Main.xaml",

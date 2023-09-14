@@ -78,6 +78,46 @@
         "hash": "ReadRangeConnections`1_2|DataTable|5KkAawvNgtHlo16kyxRtAhNTHmcDfqnMz3Hdyu9pqk",
         "assemblyName": "Studio.Generated.TypedDataTable2"
       }
+    },
+    {
+      "providerName": "TypedDataTable",
+      "typedDataTableDto": {
+        "id": 3,
+        "idRef": "ReadRangeConnections`1_3",
+        "hash": "ReadRangeConnections`1_3|DataTable|LF4jlewMxV3qH8z5ofgDFkxIHtWLeXNJcFvZVTZ7NE",
+        "dataType": "System.Data.DataTable, System.Data.Common",
+        "columns": [
+          {
+            "columnName": "Product Id",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "Drugs name",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "Status",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "MOQ",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "Current Price",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "Revised Price",
+            "dataType": "System.String, System.Private.CoreLib"
+          }
+        ]
+      },
+      "entityAssemblyKey": {
+        "name": "Studio.Generated.TypedDataTable3",
+        "hash": "ReadRangeConnections`1_3|DataTable|TVGKDGkq4WmDmG2xv74KIphLJiHaogXMMUMEKPPwGs",
+        "assemblyName": "Studio.Generated.TypedDataTable3"
+      }
     }
   ]
 }
