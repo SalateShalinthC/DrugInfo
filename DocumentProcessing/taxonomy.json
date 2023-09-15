@@ -166,15 +166,78 @@
     {
       "Connections": [],
       "DocumentTypeId": "Invoice_California_hotel.hotel_invoice.Name",
-      "Group": "Invoice_California_hotel",
-      "Category": "hotel_invoice",
-      "Name": "invoice",
+      "Group": "Invoice",
+      "Category": "Pharmacy_Invoice",
+      "Name": "CVS_Pharmacy_invoice",
       "OptionalUniqueIdentifier": "",
       "TypeField": {
         "FieldId": "Invoice_California_hotel.hotel_invoice.Name.DocumentType",
         "FieldName": "Document Type"
       },
-      "Fields": []
+      "Fields": [
+        {
+          "FieldId": "Invoice_California_hotel.hotel_invoice.Name.Main_Table",
+          "FieldName": "Main_Table",
+          "IsMultiValue": false,
+          "Type": "Table",
+          "DeriveFieldsFormat": "",
+          "Components": [
+            {
+              "FieldId": "Invoice_California_hotel.hotel_invoice.Name.Main_Table.Quantity",
+              "FieldName": "Quantity",
+              "IsMultiValue": false,
+              "Type": "Number",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": [],
+              "Metadata": [],
+              "RuleSet": null,
+              "DefaultValue": "",
+              "DataSource": null
+            },
+            {
+              "FieldId": "Invoice_California_hotel.hotel_invoice.Name.Main_Table.Name",
+              "FieldName": "Name",
+              "IsMultiValue": false,
+              "Type": "Text",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": [],
+              "Metadata": [],
+              "RuleSet": null,
+              "DefaultValue": "",
+              "DataSource": null
+            },
+            {
+              "FieldId": "Invoice_California_hotel.hotel_invoice.Name.Main_Table.Price",
+              "FieldName": "Price",
+              "IsMultiValue": false,
+              "Type": "Number",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": [],
+              "Metadata": [],
+              "RuleSet": null,
+              "DefaultValue": "",
+              "DataSource": null
+            }
+          ],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#038a18"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "m"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": "",
+          "DataSource": null
+        }
+      ]
     }
   ],
   "Groups": [
@@ -185,9 +248,9 @@
       ]
     },
     {
-      "Name": "Invoice_California_hotel",
+      "Name": "Invoice",
       "Categories": [
-        "hotel_invoice"
+        "Pharmacy_Invoice"
       ]
     }
   ],
