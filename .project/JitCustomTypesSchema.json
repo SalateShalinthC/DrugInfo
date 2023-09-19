@@ -118,6 +118,38 @@
         "hash": "ReadRangeConnections`1_3|DataTable|TVGKDGkq4WmDmG2xv74KIphLJiHaogXMMUMEKPPwGs",
         "assemblyName": "Studio.Generated.TypedDataTable3"
       }
+    },
+    {
+      "providerName": "TypedDataTable",
+      "typedDataTableDto": {
+        "id": 4,
+        "idRef": "ReadRangeConnections`1_9",
+        "hash": "ReadRangeConnections`1_9|DataTable|J2WMtCNrGYwZXG9snJNkxnaUdNdqYsRGhR2qbQGU",
+        "dataType": "System.Data.DataTable, System.Data.Common",
+        "columns": [
+          {
+            "columnName": "Quantity",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "Name",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "Price",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "Changes",
+            "dataType": "System.String, System.Private.CoreLib"
+          }
+        ]
+      },
+      "entityAssemblyKey": {
+        "name": "Studio.Generated.TypedDataTable4",
+        "hash": "ReadRangeConnections`1_9|DataTable|C4puGys9b3065qquoyrQrdxgZzKl2iNNGR4iJL4oO6k",
+        "assemblyName": "Studio.Generated.TypedDataTable4"
+      }
     }
   ]
 }
