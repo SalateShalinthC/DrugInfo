@@ -178,13 +178,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">340,0</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">370,75 370,105 309.99999999999994,105 309.99999999999994,48.500000000000014 120,48.500000000000014 120,78.5</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">370,75 370,105 450,105 450,129.5</av:PointCollection>
         <x:Double x:Key="Width">600</x:Double>
         <x:Double x:Key="Height">602.5</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID10</x:Reference>
+      <x:Reference>__ReferenceID12</x:Reference>
     </Flowchart.StartNode>
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
@@ -1125,14 +1125,14 @@
         <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="738,85" sap2010:WorkflowViewState.IdRef="MessageBox_26" Text="[Changed_Out]" />
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID10">
+    <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">20,78.5</av:Point>
           <av:Size x:Key="ShapeSize">200,81</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap:VirtualizedContainerService.HintSize="751,1458" sap2010:WorkflowViewState.IdRef="Sequence_75">
+      <Sequence sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_75">
         <Sequence.Variables>
           <Variable x:TypeArguments="s:String[]" Name="attatch" />
           <Variable x:TypeArguments="x:Int32" Default="0" Name="cmd" />
@@ -1169,7 +1169,7 @@
                       <ActivityAction.Argument2>
                         <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                       </ActivityAction.Argument2>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,713" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,832" sap2010:WorkflowViewState.IdRef="Sequence_76">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Int32" Default="0" Name="cnt" />
                           <Variable x:TypeArguments="x:Int32" Name="Mail_count" />
@@ -1179,7 +1179,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <umab:SaveMailAttachmentsX Attachments="[attachments_pdf1]" DisplayName="Save Email Attachments locally" ExcludeInlineAttachments="True" FolderPath="C:\Users\SalateShalinthC\Documents" sap:VirtualizedContainerService.HintSize="497,234" sap2010:WorkflowViewState.IdRef="SaveMailAttachmentsX_3" Message="[CurrentMail]" OverwriteExisting="True" />
+                        <umab:SaveMailAttachmentsX Attachments="[attachments_pdf1]" DisplayName="Save Email Attachments locally" ExcludeInlineAttachments="True" FolderPath="C:\Users\SalateShalinthC\Documents" sap:VirtualizedContainerService.HintSize="497,228" sap2010:WorkflowViewState.IdRef="SaveMailAttachmentsX_3" Message="[CurrentMail]" OverwriteExisting="True" />
                         <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[Mail_count]" sap:VirtualizedContainerService.HintSize="497,333" sap2010:WorkflowViewState.IdRef="Switch`1_4">
                           <Switch.Default>
                             <ui:Continue sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Continue_6" />
@@ -1433,7 +1433,7 @@
                               </uga:WriteRangeConnections.FileIdBackup>
                             </uga:WriteRangeConnections>
                           </Sequence>
-                          <Sequence x:Key="1" DisplayName="Retrieving data from pdf" sap:VirtualizedContainerService.HintSize="800,4603" sap2010:WorkflowViewState.IdRef="Sequence_126">
+                          <Sequence x:Key="1" DisplayName="Retrieving data from pdf" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_126">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="p6:DocumentTaxonomy" Name="taxanomy_invoice" />
                               <Variable x:TypeArguments="sd3:DataTable" Name="DtOut1" />
@@ -1713,6 +1713,265 @@
             </ActivityAction>
           </umab:OutlookApplicationCard.Body>
         </umab:OutlookApplicationCard>
+      </Sequence>
+    </FlowStep>
+    <FlowStep x:Name="__ReferenceID12">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">350,129.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,81</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Retrieving data from pdf" sap:VirtualizedContainerService.HintSize="800,4603" sap2010:WorkflowViewState.IdRef="Sequence_140">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="p6:DocumentTaxonomy" Name="taxanomy_invoice" />
+          <Variable x:TypeArguments="sd3:DataTable" Name="DtOut1" />
+          <Variable x:TypeArguments="x:String" Name="Doc_Text1" />
+          <Variable x:TypeArguments="p4:Document" Name="DOM1" />
+          <Variable x:TypeArguments="x:String" Default="Invoice_California_hotel.hotel_invoice.Name" Name="Doc_type_ID1" />
+          <Variable x:TypeArguments="p3:ExtractionResult" Name="Extraction_Result1" />
+          <Variable x:TypeArguments="sd3:DataSet" Name="Extracted_DataSet1" />
+          <Variable x:TypeArguments="x:String" Name="Disp" />
+          <Variable x:TypeArguments="sd5:DataTable4" Name="Main_DB" />
+          <Variable x:TypeArguments="x:String" Name="Main_output" />
+          <Variable x:TypeArguments="x:Int32" Default="1" Name="counter" />
+          <Variable x:TypeArguments="sd3:DataTable" Name="Changes_Dt" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:BuildDataTable DataTable="[DtOut1]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="738,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_34" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+        <ui:BuildDataTable DataTable="[Changes_Dt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="738,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_35" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Changes&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Changes&gt;There is no changes in price&lt;/Changes&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Changes&gt;There are some changes in price&lt;/Changes&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+        <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="738,104" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_15" Taxonomy="[taxanomy_invoice]" />
+        <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[DOM1]" DocumentPath="C:\Users\SalateShalinthC\Documents\retail\cvs-20211211_004.pdf" DocumentText="[Doc_Text1]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="738,297" sap2010:WorkflowViewState.IdRef="DigitizeDocument_16">
+          <p:DigitizeDocument.OCREngine>
+            <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID10}" Argument2="{x:Reference __ReferenceID11}">
+              <p1:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="1EepSlwaocQVvgQOBz9Z0Wzy+5T7svY6xU6GT9ZCEcq8DsaN8xZwPmj3POjAKsTvHwfWIbBD1xceTz+6UhGLYA==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,25" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_15" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000">
+                <p1:UiPathDocumentOCR.Image>
+                  <InArgument x:TypeArguments="sd:Image">
+                    <DelegateArgumentValue x:TypeArguments="sd:Image" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_155">
+                      <DelegateInArgument x:TypeArguments="sd:Image" x:Name="__ReferenceID10" Name="Image" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p1:UiPathDocumentOCR.Image>
+                <p1:UiPathDocumentOCR.PredictionId>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_156">
+                      <DelegateInArgument x:TypeArguments="x:String" x:Name="__ReferenceID11" Name="PredictionId" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p1:UiPathDocumentOCR.PredictionId>
+              </p1:UiPathDocumentOCR>
+            </ActivityFunc>
+          </p:DigitizeDocument.OCREngine>
+        </p:DigitizeDocument>
+        <p2:DataExtractionScope ClassificationResult="{x:Null}" DisplayName="Data Extraction Scope" DocumentObjectModel="[DOM1]" DocumentPath="C:\Users\SalateShalinthC\Documents\retail\cvs-20211211_004.pdf" DocumentText="[Doc_Text1]" DocumentTypeId="[Doc_type_ID1]" ExtractionResult="[Extraction_Result1]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="738,484" sap2010:WorkflowViewState.IdRef="DataExtractionScope_16" Taxonomy="[taxanomy_invoice]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI597988bb84d14d31aea728d5045c3877&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist&quot;:{&quot;FieldMappings&quot;:{&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.ProductId&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.ProductId&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.Drugsname&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.Drugsname&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.Status&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.Status&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.MOQ&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.MOQ&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.CurrentPrice&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.CurrentPrice&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Invoice_California_hotel.hotel_invoice.Name&quot;:{&quot;FieldMappings&quot;:{&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Quantity&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Quantity&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Price&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Price&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI597988bb84d14d31aea728d5045c3877&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI597988bb84d14d31aea728d5045c3877&quot;:[]}}">
+          <p2:DataExtractionScope.Extractors>
+            <p2:FormExtractor SerializedSignatureFields="{x:Null}" ApiKey="1EepSlwaocQVvgQOBz9Z0Wzy+5T7svY6xU6GT9ZCEcq8DsaN8xZwPmj3POjAKsTvHwfWIbBD1xceTz+6UhGLYA==" DisplayName="Form Extractor" Endpoint="https://du.uipath.com/svc/formextractor" sap:VirtualizedContainerService.HintSize="234,162" sap2010:WorkflowViewState.IdRef="FormExtractor_15" MinOverlapPercentage="65" PersistenceId="UI597988bb84d14d31aea728d5045c3877" SendDocumentsForAlgorithmImprovements="True" SerializedSettings="{}{}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist&quot;,&quot;FormId&quot;:&quot;0ded1d9e&quot;,&quot;FormName&quot;:&quot;Price_change&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Terry&quot;,&quot;Box&quot;:[121.41,216.27,43.33,20.27]},{&quot;Text&quot;:&quot;Drug&quot;,&quot;Box&quot;:[121.41,264.24,40.39,20.27]},{&quot;Text&quot;:&quot;company&quot;,&quot;Box&quot;:[121.41,309.27,76.46,20.27]},{&quot;Text&quot;:&quot;Drug&quot;,&quot;Box&quot;:[176.23,72.1,21.78,11.25]},{&quot;Text&quot;:&quot;Price&quot;,&quot;Box&quot;:[176.23,96.09,22.08,11.25]},{&quot;Text&quot;:&quot;changes&quot;,&quot;Box&quot;:[176.23,120.82,36.63,11.25]},{&quot;Text&quot;:&quot;for&quot;,&quot;Box&quot;:[176.23,159.79,12.92,11.25]},{&quot;Text&quot;:&quot;Sep&quot;,&quot;Box&quot;:[176.23,174.77,16.4,11.25]},{&quot;Text&quot;:&quot;9th&quot;,&quot;Box&quot;:[175.86,193.75,11.79,11.63]},{&quot;Text&quot;:&quot;2023.&quot;,&quot;Box&quot;:[176.23,208.03,26.83,11.25]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[{&quot;FieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.ProductId&quot;,&quot;Box&quot;:[219.212,71.4612,54.4485,1.4485]},{&quot;FieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.Drugsname&quot;,&quot;Box&quot;:[219.212,125.9097,198.0,1.4485]},{&quot;FieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.Status&quot;,&quot;Box&quot;:[219.212,323.9097,46.0,1.4485]},{&quot;FieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.MOQ&quot;,&quot;Box&quot;:[219.212,369.9097,35.0,1.4485]},{&quot;FieldId&quot;:&quot;TerryDrugcompany.Medical.TDC_Drug_PriceChangelist.Current_Price.CurrentPrice&quot;,&quot;Box&quot;:[219.212,470.9097,64.0,1.4485]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[220.6605,71.4612,54.4485,26.0]},{&quot;Row&quot;:0,&quot;Column&quot;:1,&quot;Box&quot;:[220.6605,125.9097,198.0,26.0]},{&quot;Row&quot;:0,&quot;Column&quot;:2,&quot;Box&quot;:[220.6605,323.9097,46.0,26.0]},{&quot;Row&quot;:0,&quot;Column&quot;:3,&quot;Box&quot;:[220.6605,369.9097,35.0,26.0]},{&quot;Row&quot;:0,&quot;Column&quot;:4,&quot;Box&quot;:[220.6605,470.9097,64.0,26.0]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[246.6605,71.4612,54.4485,16.0]},{&quot;Row&quot;:1,&quot;Column&quot;:1,&quot;Box&quot;:[246.6605,125.9097,198.0,16.0]},{&quot;Row&quot;:1,&quot;Column&quot;:2,&quot;Box&quot;:[246.6605,323.9097,46.0,16.0]},{&quot;Row&quot;:1,&quot;Column&quot;:3,&quot;Box&quot;:[246.6605,369.9097,35.0,16.0]},{&quot;Row&quot;:1,&quot;Column&quot;:4,&quot;Box&quot;:[246.6605,470.9097,64.0,16.0]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[262.6605,71.4612,54.4485,16.0]},{&quot;Row&quot;:2,&quot;Column&quot;:1,&quot;Box&quot;:[262.6605,125.9097,198.0,16.0]},{&quot;Row&quot;:2,&quot;Column&quot;:2,&quot;Box&quot;:[262.6605,323.9097,46.0,16.0]},{&quot;Row&quot;:2,&quot;Column&quot;:3,&quot;Box&quot;:[262.6605,369.9097,35.0,16.0]},{&quot;Row&quot;:2,&quot;Column&quot;:4,&quot;Box&quot;:[262.6605,470.9097,64.0,16.0]},{&quot;Row&quot;:3,&quot;Column&quot;:0,&quot;Box&quot;:[278.6605,71.4612,54.4485,15.0]},{&quot;Row&quot;:3,&quot;Column&quot;:1,&quot;Box&quot;:[278.6605,125.9097,198.0,15.0]},{&quot;Row&quot;:3,&quot;Column&quot;:2,&quot;Box&quot;:[278.6605,323.9097,46.0,15.0]},{&quot;Row&quot;:3,&quot;Column&quot;:3,&quot;Box&quot;:[278.6605,369.9097,35.0,15.0]},{&quot;Row&quot;:3,&quot;Column&quot;:4,&quot;Box&quot;:[278.6605,470.9097,64.0,15.0]},{&quot;Row&quot;:4,&quot;Column&quot;:0,&quot;Box&quot;:[293.6605,71.4612,54.4485,15.0]},{&quot;Row&quot;:4,&quot;Column&quot;:1,&quot;Box&quot;:[293.6605,125.9097,198.0,15.0]},{&quot;Row&quot;:4,&quot;Column&quot;:2,&quot;Box&quot;:[293.6605,323.9097,46.0,15.0]},{&quot;Row&quot;:4,&quot;Column&quot;:3,&quot;Box&quot;:[293.6605,369.9097,35.0,15.0]},{&quot;Row&quot;:4,&quot;Column&quot;:4,&quot;Box&quot;:[293.6605,470.9097,64.0,15.0]},{&quot;Row&quot;:5,&quot;Column&quot;:0,&quot;Box&quot;:[308.6605,71.4612,54.4485,16.0]},{&quot;Row&quot;:5,&quot;Column&quot;:1,&quot;Box&quot;:[308.6605,125.9097,198.0,16.0]},{&quot;Row&quot;:5,&quot;Column&quot;:2,&quot;Box&quot;:[308.6605,323.9097,46.0,16.0]},{&quot;Row&quot;:5,&quot;Column&quot;:3,&quot;Box&quot;:[308.6605,369.9097,35.0,16.0]},{&quot;Row&quot;:5,&quot;Column&quot;:4,&quot;Box&quot;:[308.6605,470.9097,64.0,16.0]},{&quot;Row&quot;:6,&quot;Column&quot;:0,&quot;Box&quot;:[324.6605,71.4612,54.4485,15.0]},{&quot;Row&quot;:6,&quot;Column&quot;:1,&quot;Box&quot;:[324.6605,125.9097,198.0,15.0]},{&quot;Row&quot;:6,&quot;Column&quot;:2,&quot;Box&quot;:[324.6605,323.9097,46.0,15.0]},{&quot;Row&quot;:6,&quot;Column&quot;:3,&quot;Box&quot;:[324.6605,369.9097,35.0,15.0]},{&quot;Row&quot;:6,&quot;Column&quot;:4,&quot;Box&quot;:[324.6605,470.9097,64.0,15.0]},{&quot;Row&quot;:7,&quot;Column&quot;:0,&quot;Box&quot;:[339.6605,71.4612,54.4485,16.0]},{&quot;Row&quot;:7,&quot;Column&quot;:1,&quot;Box&quot;:[339.6605,125.9097,198.0,16.0]},{&quot;Row&quot;:7,&quot;Column&quot;:2,&quot;Box&quot;:[339.6605,323.9097,46.0,16.0]},{&quot;Row&quot;:7,&quot;Column&quot;:3,&quot;Box&quot;:[339.6605,369.9097,35.0,16.0]},{&quot;Row&quot;:7,&quot;Column&quot;:4,&quot;Box&quot;:[339.6605,470.9097,64.0,16.0]},{&quot;Row&quot;:8,&quot;Column&quot;:0,&quot;Box&quot;:[355.6605,71.4612,54.4485,16.0]},{&quot;Row&quot;:8,&quot;Column&quot;:1,&quot;Box&quot;:[355.6605,125.9097,198.0,16.0]},{&quot;Row&quot;:8,&quot;Column&quot;:2,&quot;Box&quot;:[355.6605,323.9097,46.0,16.0]},{&quot;Row&quot;:8,&quot;Column&quot;:3,&quot;Box&quot;:[355.6605,369.9097,35.0,16.0]},{&quot;Row&quot;:8,&quot;Column&quot;:4,&quot;Box&quot;:[355.6605,470.9097,64.0,16.0]},{&quot;Row&quot;:9,&quot;Column&quot;:0,&quot;Box&quot;:[371.6605,71.4612,54.4485,15.0]},{&quot;Row&quot;:9,&quot;Column&quot;:1,&quot;Box&quot;:[371.6605,125.9097,198.0,15.0]},{&quot;Row&quot;:9,&quot;Column&quot;:2,&quot;Box&quot;:[371.6605,323.9097,46.0,15.0]},{&quot;Row&quot;:9,&quot;Column&quot;:3,&quot;Box&quot;:[371.6605,369.9097,35.0,15.0]},{&quot;Row&quot;:9,&quot;Column&quot;:4,&quot;Box&quot;:[371.6605,470.9097,64.0,15.0]},{&quot;Row&quot;:10,&quot;Column&quot;:0,&quot;Box&quot;:[386.6605,71.4612,54.4485,15.0]},{&quot;Row&quot;:10,&quot;Column&quot;:1,&quot;Box&quot;:[386.6605,125.9097,198.0,15.0]},{&quot;Row&quot;:10,&quot;Column&quot;:2,&quot;Box&quot;:[386.6605,323.9097,46.0,15.0]},{&quot;Row&quot;:10,&quot;Column&quot;:3,&quot;Box&quot;:[386.6605,369.9097,35.0,15.0]},{&quot;Row&quot;:10,&quot;Column&quot;:4,&quot;Box&quot;:[386.6605,470.9097,64.0,15.0]},{&quot;Row&quot;:11,&quot;Column&quot;:0,&quot;Box&quot;:[401.6605,71.4612,54.4485,16.0]},{&quot;Row&quot;:11,&quot;Column&quot;:1,&quot;Box&quot;:[401.6605,125.9097,198.0,16.0]},{&quot;Row&quot;:11,&quot;Column&quot;:2,&quot;Box&quot;:[401.6605,323.9097,46.0,16.0]},{&quot;Row&quot;:11,&quot;Column&quot;:3,&quot;Box&quot;:[401.6605,369.9097,35.0,16.0]},{&quot;Row&quot;:11,&quot;Column&quot;:4,&quot;Box&quot;:[401.6605,470.9097,64.0,16.0]},{&quot;Row&quot;:12,&quot;Column&quot;:0,&quot;Box&quot;:[417.6605,71.4612,54.4485,15.0]},{&quot;Row&quot;:12,&quot;Column&quot;:1,&quot;Box&quot;:[417.6605,125.9097,198.0,15.0]},{&quot;Row&quot;:12,&quot;Column&quot;:2,&quot;Box&quot;:[417.6605,323.9097,46.0,15.0]},{&quot;Row&quot;:12,&quot;Column&quot;:3,&quot;Box&quot;:[417.6605,369.9097,35.0,15.0]},{&quot;Row&quot;:12,&quot;Column&quot;:4,&quot;Box&quot;:[417.6605,470.9097,64.0,15.0]},{&quot;Row&quot;:13,&quot;Column&quot;:0,&quot;Box&quot;:[432.6605,71.4612,54.4485,16.0]},{&quot;Row&quot;:13,&quot;Column&quot;:1,&quot;Box&quot;:[432.6605,125.9097,198.0,16.0]},{&quot;Row&quot;:13,&quot;Column&quot;:2,&quot;Box&quot;:[432.6605,323.9097,46.0,16.0]},{&quot;Row&quot;:13,&quot;Column&quot;:3,&quot;Box&quot;:[432.6605,369.9097,35.0,16.0]},{&quot;Row&quot;:13,&quot;Column&quot;:4,&quot;Box&quot;:[432.6605,470.9097,64.0,16.0]},{&quot;Row&quot;:14,&quot;Column&quot;:0,&quot;Box&quot;:[448.6605,71.4612,54.4485,16.0]},{&quot;Row&quot;:14,&quot;Column&quot;:1,&quot;Box&quot;:[448.6605,125.9097,198.0,16.0]},{&quot;Row&quot;:14,&quot;Column&quot;:2,&quot;Box&quot;:[448.6605,323.9097,46.0,16.0]},{&quot;Row&quot;:14,&quot;Column&quot;:3,&quot;Box&quot;:[448.6605,369.9097,35.0,16.0]},{&quot;Row&quot;:14,&quot;Column&quot;:4,&quot;Box&quot;:[448.6605,470.9097,64.0,16.0]},{&quot;Row&quot;:15,&quot;Column&quot;:0,&quot;Box&quot;:[464.6605,71.4612,54.4485,11.0]},{&quot;Row&quot;:15,&quot;Column&quot;:1,&quot;Box&quot;:[464.6605,125.9097,198.0,11.0]},{&quot;Row&quot;:15,&quot;Column&quot;:2,&quot;Box&quot;:[464.6605,323.9097,46.0,11.0]},{&quot;Row&quot;:15,&quot;Column&quot;:3,&quot;Box&quot;:[464.6605,369.9097,35.0,11.0]},{&quot;Row&quot;:15,&quot;Column&quot;:4,&quot;Box&quot;:[464.6605,470.9097,64.0,11.0]},{&quot;Row&quot;:16,&quot;Column&quot;:0,&quot;Box&quot;:[475.6605,71.4612,54.4485,2.8396]},{&quot;Row&quot;:16,&quot;Column&quot;:1,&quot;Box&quot;:[475.6605,125.9097,198.0,2.8396]},{&quot;Row&quot;:16,&quot;Column&quot;:2,&quot;Box&quot;:[475.6605,323.9097,46.0,2.8396]},{&quot;Row&quot;:16,&quot;Column&quot;:3,&quot;Box&quot;:[475.6605,369.9097,35.0,2.8396]},{&quot;Row&quot;:16,&quot;Column&quot;:4,&quot;Box&quot;:[475.6605,470.9097,64.0,2.8396]}]}]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}},{&quot;DocumentTypeId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name&quot;,&quot;FormId&quot;:&quot;ff687cd5&quot;,&quot;FormName&quot;:&quot;Pharmacy_invoice&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,222.0,762.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;CVS&quot;,&quot;Box&quot;:[21.61,46.16,53.9,21.61]},{&quot;Text&quot;:&quot;pharmacy&quot;,&quot;Box&quot;:[24.01,104.06,100.86,22.41]},{&quot;Text&quot;:&quot;400&quot;,&quot;Box&quot;:[59.5,75.25,15.74,8.54]},{&quot;Text&quot;:&quot;SUTTER&quot;,&quot;Box&quot;:[59.5,96.59,31.22,8.0]},{&quot;Text&quot;:&quot;ST&quot;,&quot;Box&quot;:[59.24,133.41,10.14,8.0]},{&quot;Text&quot;:&quot;SAN&quot;,&quot;Box&quot;:[70.18,49.1,15.74,7.74]},{&quot;Text&quot;:&quot;FRANCISCO,&quot;,&quot;Box&quot;:[69.64,70.18,50.7,8.54]},{&quot;Text&quot;:&quot;CA&quot;,&quot;Box&quot;:[69.64,128.08,10.67,7.74]},{&quot;Text&quot;:&quot;94112&quot;,&quot;Box&quot;:[69.38,149.42,26.15,7.74]},{&quot;Text&quot;:&quot;415.398.2175&quot;,&quot;Box&quot;:[79.51,80.58,63.24,8.81]},{&quot;Text&quot;:&quot;REG#03&quot;,&quot;Box&quot;:[100.86,12.01,31.75,7.74]},{&quot;Text&quot;:&quot;TRN#1622&quot;,&quot;Box&quot;:[100.86,49.36,41.63,7.74]},{&quot;Text&quot;:&quot;CSHR#0000099&quot;,&quot;Box&quot;:[100.59,96.59,63.24,8.0]},{&quot;Text&quot;:&quot;STR#10368&quot;,&quot;Box&quot;:[100.59,165.7,46.96,8.0]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[{&quot;FieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Quantity&quot;,&quot;Box&quot;:[0.0,0.0,0.0,0.0]},{&quot;FieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Name&quot;,&quot;Box&quot;:[0.0,0.0,0.0,0.0]},{&quot;FieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Price&quot;,&quot;Box&quot;:[0.0,0.0,0.0,0.0]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[118.1818,16.3636,10.9091,0.9091]},{&quot;Row&quot;:0,&quot;Column&quot;:1,&quot;Box&quot;:[118.1818,27.2727,84.2424,0.9091]},{&quot;Row&quot;:0,&quot;Column&quot;:2,&quot;Box&quot;:[118.1818,143.0303,43.9394,0.9091]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[119.0909,16.3636,10.9091,11.2121]},{&quot;Row&quot;:1,&quot;Column&quot;:1,&quot;Box&quot;:[119.0909,27.2727,84.2424,11.2121]},{&quot;Row&quot;:1,&quot;Column&quot;:2,&quot;Box&quot;:[119.0909,143.0303,43.9394,11.2121]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[130.303,16.3636,10.9091,10.303]},{&quot;Row&quot;:2,&quot;Column&quot;:1,&quot;Box&quot;:[130.303,27.2727,84.2424,10.303]},{&quot;Row&quot;:2,&quot;Column&quot;:2,&quot;Box&quot;:[130.303,143.0303,43.9394,10.303]},{&quot;Row&quot;:3,&quot;Column&quot;:0,&quot;Box&quot;:[140.6061,16.3636,10.9091,12.1212]},{&quot;Row&quot;:3,&quot;Column&quot;:1,&quot;Box&quot;:[140.6061,27.2727,84.2424,12.1212]},{&quot;Row&quot;:3,&quot;Column&quot;:2,&quot;Box&quot;:[140.6061,143.0303,43.9394,12.1212]},{&quot;Row&quot;:4,&quot;Column&quot;:0,&quot;Box&quot;:[152.7273,16.3636,10.9091,3.3333]},{&quot;Row&quot;:4,&quot;Column&quot;:1,&quot;Box&quot;:[152.7273,27.2727,84.2424,3.3333]},{&quot;Row&quot;:4,&quot;Column&quot;:2,&quot;Box&quot;:[152.7273,143.0303,43.9394,3.3333]}]}]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}},{&quot;DocumentTypeId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name&quot;,&quot;FormId&quot;:&quot;169bf4c1&quot;,&quot;FormName&quot;:&quot;3nd_CVS_Invoice&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,223.0,739.0],&quot;SkewAngle&quot;:-0.2,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;CVS&quot;,&quot;Box&quot;:[24.01,39.21,54.68,22.14]},{&quot;Text&quot;:&quot;pharmacy&quot;,&quot;Box&quot;:[27.47,97.36,100.83,22.94]},{&quot;Text&quot;:&quot;3645&quot;,&quot;Box&quot;:[57.62,68.29,20.81,7.74]},{&quot;Text&quot;:&quot;LAS&quot;,&quot;Box&quot;:[57.35,94.7,15.74,8.0]},{&quot;Text&quot;:&quot;VEGAS&quot;,&quot;Box&quot;:[57.08,116.03,26.41,8.27]},{&quot;Text&quot;:&quot;LAS&quot;,&quot;Box&quot;:[65.35,52.28,15.47,7.47]},{&quot;Text&quot;:&quot;VEGAS&quot;,&quot;Box&quot;:[65.09,73.36,28.81,7.74]},{&quot;Text&quot;:&quot;NV&quot;,&quot;Box&quot;:[65.09,110.7,10.4,7.2]},{&quot;Text&quot;:&quot;89109&quot;,&quot;Box&quot;:[65.09,132.31,25.87,7.47]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[{&quot;FieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Quantity&quot;,&quot;Box&quot;:[0.0,0.0,0.0,0.0]},{&quot;FieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Name&quot;,&quot;Box&quot;:[0.0,0.0,0.0,0.0]},{&quot;FieldId&quot;:&quot;Invoice_California_hotel.hotel_invoice.Name.Main_Table.Price&quot;,&quot;Box&quot;:[0.0,0.0,0.0,0.0]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[116.2622,9.7465,10.0946,11.1389]},{&quot;Row&quot;:0,&quot;Column&quot;:1,&quot;Box&quot;:[116.2622,19.8412,87.0226,11.1389]},{&quot;Row&quot;:0,&quot;Column&quot;:2,&quot;Box&quot;:[116.2622,134.0148,35.6793,11.1389]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[127.4011,9.7465,10.0946,7.658]},{&quot;Row&quot;:1,&quot;Column&quot;:1,&quot;Box&quot;:[127.4011,19.8412,87.0226,7.658]},{&quot;Row&quot;:1,&quot;Column&quot;:2,&quot;Box&quot;:[127.4011,134.0148,35.6793,7.658]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[135.0591,9.7465,10.0946,8.0061]},{&quot;Row&quot;:2,&quot;Column&quot;:1,&quot;Box&quot;:[135.0591,19.8412,87.0226,8.0061]},{&quot;Row&quot;:2,&quot;Column&quot;:2,&quot;Box&quot;:[135.0591,134.0148,35.6793,8.0061]},{&quot;Row&quot;:3,&quot;Column&quot;:0,&quot;Box&quot;:[143.0652,9.7465,10.0946,10.9648]},{&quot;Row&quot;:3,&quot;Column&quot;:1,&quot;Box&quot;:[143.0652,19.8412,87.0226,10.9648]},{&quot;Row&quot;:3,&quot;Column&quot;:2,&quot;Box&quot;:[143.0652,134.0148,35.6793,10.9648]}]}]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}}]" Timeout="100000">
+              <p2:FormExtractor.DocumentBounds>
+                <InArgument x:TypeArguments="p3:ResultsDocumentBounds">
+                  <DelegateArgumentValue x:TypeArguments="p3:ResultsDocumentBounds">
+                    <DelegateInArgument x:TypeArguments="p3:ResultsDocumentBounds" Name="DocumentBounds" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:FormExtractor.DocumentBounds>
+              <p2:FormExtractor.DocumentObjectModel>
+                <InArgument x:TypeArguments="p4:Document">
+                  <DelegateArgumentValue x:TypeArguments="p4:Document">
+                    <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:FormExtractor.DocumentObjectModel>
+              <p2:FormExtractor.DocumentPath>
+                <InArgument x:TypeArguments="x:String">
+                  <DelegateArgumentValue x:TypeArguments="x:String">
+                    <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:FormExtractor.DocumentPath>
+              <p2:FormExtractor.DocumentText>
+                <InArgument x:TypeArguments="x:String">
+                  <DelegateArgumentValue x:TypeArguments="x:String">
+                    <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:FormExtractor.DocumentText>
+              <p2:FormExtractor.ExtractorDocumentType>
+                <InArgument x:TypeArguments="p5:ExtractorDocumentType">
+                  <DelegateArgumentValue x:TypeArguments="p5:ExtractorDocumentType">
+                    <DelegateInArgument x:TypeArguments="p5:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:FormExtractor.ExtractorDocumentType>
+              <p2:FormExtractor.ExtractorResult>
+                <OutArgument x:TypeArguments="p5:ExtractorResult">
+                  <DelegateArgumentReference x:TypeArguments="p5:ExtractorResult">
+                    <DelegateOutArgument x:TypeArguments="p5:ExtractorResult" Name="ExtractorResult" />
+                  </DelegateArgumentReference>
+                </OutArgument>
+              </p2:FormExtractor.ExtractorResult>
+              <p2:FormExtractor.PredictionId>
+                <InArgument x:TypeArguments="x:String">
+                  <DelegateArgumentValue x:TypeArguments="x:String">
+                    <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                  </DelegateArgumentValue>
+                </InArgument>
+              </p2:FormExtractor.PredictionId>
+            </p2:FormExtractor>
+          </p2:DataExtractionScope.Extractors>
+        </p2:DataExtractionScope>
+        <p2:ExportExtractionResults DataSet="[Extracted_DataSet1]" DisplayName="Export Extraction Results" ExtractionResult="[Extraction_Result1]" sap:VirtualizedContainerService.HintSize="738,174" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_16" IncludeConfidence="False" IncludeOCRConfidence="False" />
+        <ui:MergeDataTable Destination="[DtOut1]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="738,133" sap2010:WorkflowViewState.IdRef="MergeDataTable_18" MissingSchemaAction="Add" Source="[Extracted_DataSet1.Tables(2)]" />
+        <uga:WriteRangeConnections ConnectionAccountName="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" BrowserItemFriendlyName="retail change" BrowserItemId="https://docs.google.com/spreadsheets/d/1vyg6qcH2-spZP3ckXsigpukGiP_W6Mw3cavv_3TefSo/edit?usp=drivesdk" ConnectionId="ce51734c-1990-4227-b792-cbf7349ca150" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="738,358" sap2010:WorkflowViewState.IdRef="WriteRangeConnections_17" IncludeHeaders="True" ItemSelectionMode="Browse" Range="Sheet1" Source="[DtOut1]" UseConnectionService="True" WorkingWithTemplateSpreadsheet="False" WriteMode="Overwrite">
+          <uga:WriteRangeConnections.FileIdBackup>
+            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="Browse">
+              <usau:BackupSlot.BackupValues>
+                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </uga:WriteRangeConnections.FileIdBackup>
+        </uga:WriteRangeConnections>
+        <uga:ReadRangeConnections x:TypeArguments="sd5:DataTable4" ConnectionAccountName="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" BrowserItemFriendlyName="retail main DB" BrowserItemId="https://docs.google.com/spreadsheets/d/1GU7wGap4e9oACWi_PugLUmJJWmwp7Wqsg7wdAggW9ek/edit?usp=drivesdk" ConnectionId="ce51734c-1990-4227-b792-cbf7349ca150" DisplayName="Read Range" HasHeaders="True" sap:VirtualizedContainerService.HintSize="738,307" sap2010:WorkflowViewState.IdRef="ReadRangeConnections`1_18" ItemSelectionMode="Browse" Range="Sheet1" ReadAs="Values" Result="[Main_DB]" UseConnectionService="True" WorkingWithTemplateSpreadsheet="False">
+          <uga:ReadRangeConnections.ColumnNames>
+            <x:Array Type="x:String">
+              <x:String>Quantity</x:String>
+              <x:String>Name</x:String>
+              <x:String>Price</x:String>
+              <x:String>Changes</x:String>
+            </x:Array>
+          </uga:ReadRangeConnections.ColumnNames>
+          <uga:ReadRangeConnections.FileIdBackup>
+            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="Browse">
+              <usau:BackupSlot.BackupValues>
+                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </uga:ReadRangeConnections.FileIdBackup>
+        </uga:ReadRangeConnections>
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DtOut1]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="738,1512" sap2010:WorkflowViewState.IdRef="ForEachRow_34">
+          <ui:ForEachRow.Body>
+            <ActivityAction x:TypeArguments="sd3:DataRow">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sd3:DataRow" Name="Changed_row" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="704,1326" sap2010:WorkflowViewState.IdRef="Sequence_146">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Main_DB]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="662,1238" sap2010:WorkflowViewState.IdRef="ForEachRow_33">
+                  <ui:ForEachRow.Body>
+                    <ActivityAction x:TypeArguments="sd3:DataRow">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="sd3:DataRow" Name="Main_Row" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,1052" sap2010:WorkflowViewState.IdRef="Sequence_145">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If Condition="[Main_Row(1).ToString = Changed_row(1).ToString]" sap:VirtualizedContainerService.HintSize="586,964" sap2010:WorkflowViewState.IdRef="If_36">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="552,782" sap2010:WorkflowViewState.IdRef="Sequence_143">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If Condition="[Main_Row(2).ToString &lt;&gt; Changed_row(2).ToString]" sap:VirtualizedContainerService.HintSize="510,522" sap2010:WorkflowViewState.IdRef="If_35">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_141">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:String" Name="one" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_72">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Object">[Main_Row(3)]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Object">[Changes_Dt.Rows(1).Item("Changes").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_142">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:String" Name="two" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_73">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Object">[Main_Row(3)]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Object">[Changes_Dt.Rows(0).Item("Changes").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:Object">[Main_Row(2)]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:Object">[Changed_row(2)]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:Object">[Main_Row(0)]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(Main_Row(0)) - Convert.ToInt32(Changed_Row(0))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                              </ui:MultipleAssign>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_144" />
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachRow.Body>
+                </ui:ForEachRow>
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEachRow.Body>
+        </ui:ForEachRow>
+        <ui:OutputDataTable DataTable="[Main_DB]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="738,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_22" Text="[Main_output]" />
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="738,85" sap2010:WorkflowViewState.IdRef="MessageBox_39" Text="[Main_output]" />
+        <uga:WriteRangeConnections ConnectionAccountName="{x:Null}" ManualEntrySpreadsheetId="{x:Null}" Spreadsheet="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" BrowserItemFriendlyName="retail main DB" BrowserItemId="https://docs.google.com/spreadsheets/d/1GU7wGap4e9oACWi_PugLUmJJWmwp7Wqsg7wdAggW9ek/edit?usp=drivesdk" ConnectionId="ce51734c-1990-4227-b792-cbf7349ca150" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="738,358" sap2010:WorkflowViewState.IdRef="WriteRangeConnections_18" IncludeHeaders="True" ItemSelectionMode="Browse" Range="Sheet1" Source="[Main_DB]" UseConnectionService="True" WorkingWithTemplateSpreadsheet="False" WriteMode="Overwrite">
+          <uga:WriteRangeConnections.FileIdBackup>
+            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="Browse">
+              <usau:BackupSlot.BackupValues>
+                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </uga:WriteRangeConnections.FileIdBackup>
+        </uga:WriteRangeConnections>
       </Sequence>
     </FlowStep>
   </Flowchart>
